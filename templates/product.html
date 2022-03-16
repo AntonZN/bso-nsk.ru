@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load view_breadcrumbs %}
+{% load cropping %}
+
+
+{% block title %}Главная{% endblock %}
+{% block content %}
+    <header class="ct-mediaSection ct-mediaSectionHeader ct-u-colorWhite" data-color="#fff" data-height="300px"
+            data-background="{% static 'assets/images/content/header-flowers.jpg' %}"
+            data-background-mobile="{% static 'assets/images/content/header-flowers.jpg' %}">
+        <div class="ct-mediaSection-inner">
+            <div class="container">
+                <div class="row text-center ct-u-paddingTop40">
+                    <div class="col-md-12">
+                        <h3 class="ct-fw-700 text-uppercase">
+                            {{ product.name }}
+                        </h3>
+                        {% render_breadcrumbs "breadcrumb.html" %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="ct-u-paddingBoth100">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12">
+                    <div class="ct-showProducts">
+                        <div class="ct-singleProduct">
+                            <div class="ct-productShop">
+                                <div class="row">
+                                    <div class="col-lg-7 col-md-12">
+                                        <div class="ct-productShop-image  text-center ct-u-paddingBoth60 ct-js-popupGallery ct-zoom ct-frame">
+                                            <!--ct-zoom--><!--ct-frame-->
+                                            <a href="{% cropped_thumbnail product "image_cropping" max_size="1000x1000" %}"
+                                               class="ct-js-popup">
+                                                <img id="zoom_01"
+                                                     src="{% cropped_thumbnail product "image_cropping" max_size="1000x1000" %}"
+                                                     data-zoom-image="{% cropped_thumbnail product "image_cropping" max_size="1000x1000" %}"
+                                                     class="ct-js-zoomImage" alt=""/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-5 col-md-12">
+                                        <div class="ct-productShop-content">
+                                            <div class="ct-productShop-name ct-u-fontSize24 ct-fw-700 text-uppercase ct-u-mobileTextCenter">
+                                                {{ product.name }}
+                                            </div>
+                                            <h4 class="ct-productShop-price ct-u-fontType2 ct-fs-i ct-u-colorMotive">{{ product.price }}
+                                                ₽</h4>
+                                            <p class="ct-productShop-description">{{ product.description }}</p>
+                                            <div class="ct-u-borderBottom ct-u-paddingBottom10"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+{% block scripts %}
+    <script src="{% static 'assets/js/zoom/jquery.elevatezoom.js' %}"></script>
+    <script src="{% static 'assets/plugins/magnific-popup/jquery.magnific-popup.min.js' %} "></script>
+{% endblock %}

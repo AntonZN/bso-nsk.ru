@@ -1,0 +1,58 @@
+//Contact Icons
+.ct-contactBox {
+  ul.ct-contactBox-list {
+    padding-top: 20px;
+    margin-bottom: 0;
+    float: left;
+    padding-right: 20px;
+    li {
+      a {
+        display: block;
+        width: 55px;
+        height: 55px;
+        color: @grey-color;
+        background-color: transparent;
+        border: 2px solid @grey-color;
+        text-align: center;
+        .ct-m-rounded(50%);
+        line-height: 51px;
+        i {
+          color: @grey-color;
+          font-size: 30px;
+          line-height: inherit;
+        }
+        &:hover, &:active, &:focus {
+          border-color: #fff;
+          i {
+            color: #fff;
+          }
+        }
+      }
+      &.active {
+        a {
+          color: #fff;
+          border-color: #fff;
+          i {
+            color: #fff;
+          }
+        }
+      }
+    }
+    &.ct-contactBox-list--smallPadding {
+      padding-top: 14px;
+    }
+  }
+  .ct-contactBox-content {
+    font-size: 30px;
+    padding-top: 20px;
+  }
+  .ct-contactBox-info{
+    font-size: 14px;
+    margin-top: -8px;
+  }
+}
+
+.img-thumbnail {
+  .ct-m-rounded(0);
+  padding: 3px;
+}

@@ -1,0 +1,393 @@
+.btn {
+  .ct-m-boxShadow(0px 1px 3px 0px rgba(4, 4, 4, 0.25));
+  font-family: @font-family2;
+  font-style: italic;
+  font-size: 16px;
+  .ct-m-borderRadius(0);
+  position: relative;
+  padding: 10px 17px;
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 2px;
+    bottom: 2px;
+    right: 2px;
+    left: 2px;
+    border: 1px solid;
+  }
+// -------------------Btn default // -----------------------------------
+  &.btn-default
+  {
+    &:before{
+      border-color: #dadada;
+    }
+    &:hover, &:focus, &:active {
+      background-color: #fff;
+    }
+    &.ct-btn--border{
+      background: transparent;
+      &:before{
+        display: none;
+      }
+      &:hover, &:focus, &:active {
+        color:#fff ;
+      }
+    }
+    &.dropdown-toggle {
+      &:hover, &:focus, &:active {
+        background-color: #fff;
+      }
+    }
+  }
+  // -------------------Btn primary // -----------------------------------
+  &.btn-primary{
+    &:before{
+      border-color: #dadada;
+    }
+    &:hover, &:focus, &:active {
+      background-color: #fff;
+      border-color:transparent;
+    }
+    &.ct-btn--border{
+      background: transparent;
+      border-width: 1px;
+      &:before{
+        display: none;
+      }
+      &:hover, &:focus, &:active {
+        color:#fff ;
+      }
+    }
+    &.dropdown-toggle {
+      &:hover, &:focus, &:active {
+        background-color: #fff;
+      }
+    }
+  }
+  // -------------------Btn success // -----------------------------------
+  &.btn-success {
+    background-color: #5cb85c;
+    border-color:#5cb85c;
+    &:before {
+      border-color: #dadada;
+    }
+    &:hover, &:focus, &:active{
+      color: #5cb85c;
+      background-color: #fff;
+      border-color:transparent;
+      &:before {
+        border-color: #5cb85c;
+      }
+    }
+
+    &.ct-btn--border{
+      background: transparent;
+      color: #5cb85c;
+      border-width: 1px;
+      &:before{
+        display: none;
+      }
+      &:hover, &:focus, &:active {
+        background-color: #5cb85c;
+        color:#fff ;
+      }
+    }
+    &.dropdown-toggle {
+      &:hover, &:focus, &:active {
+        background-color: #fff;
+        .caret {
+          color: #5cb85c;
+        }
+      }
+      + .dropdown-menu {
+        li{
+          a {
+            &:hover, &:active, &:focus {
+              color: #5cb85c;
+              border-left-color: #5cb85c;
+            }
+          }
+        }
+      }
+    }
+  }
+  // -------------------Btn info // -----------------------------------
+  &.btn-info {
+    background-color: #5bc0de;
+    border-color:#5bc0de;
+    &:before {
+      border-color: #dadada;
+    }
+    &:hover, &:focus, &:active{
+      color: #5bc0de;
+      background-color: #fff;
+      border-color:transparent;
+      &:before {
+        border-color: #5bc0de;
+      }
+    }
+    &.ct-btn--border{
+      background: transparent;
+      color: #5bc0de;
+      border-width: 1px;
+      &:before{
+        display: none;
+      }
+      &:hover, &:focus, &:active {
+        background-color: #5bc0de;
+        color:#fff ;
+      }
+    }
+    &.dropdown-toggle {
+      &:hover, &:focus, &:active {
+        background-color: #fff;
+        .caret {
+          color: black;
+        }
+      }
+    }
+    &.dropdown-toggle {
+      &:hover, &:focus, &:active {
+        background-color: #fff;
+        .caret {
+          color: #5bc0de;
+        }
+      }
+      + .dropdown-menu {
+        li{
+          a {
+            &:hover, &:active, &:focus {
+              color: #5bc0de;
+              border-left-color: #5bc0de;
+            }
+          }
+        }
+      }
+    }
+  }
+  // -------------------Btn warning // -----------------------------------
+&.btn-warning {
+  background-color: #f0ad4e;
+  border-color:#f0ad4e;
+  &:before {
+    border-color: #dadada;
+  }
+  &:hover, &:focus, &:active{
+    color: #f0ad4e;
+    background-color: #fff;
+    border-color:transparent;
+    &:before {
+      border-color: #f0ad4e;
+    }
+  }
+  &.ct-btn--border{
+    background: transparent;
+    color: #f0ad4e;
+    border-width: 1px;
+    &:before{
+      display: none;
+    }
+    &:hover, &:focus, &:active {
+      background-color: #f0ad4e;
+      color:#fff ;
+    }
+  }
+  &.dropdown-toggle {
+    &:hover, &:focus, &:active {
+      background-color: #fff;
+      .caret {
+        color: #f0ad4e;
+      }
+    }
+    + .dropdown-menu {
+      li{
+        a {
+          &:hover, &:active, &:focus {
+            color: #f0ad4e;
+            border-left-color: #f0ad4e;
+          }
+        }
+      }
+    }
+  }
+}
+  // -------------------Btn danger // -----------------------------------
+  &.btn-danger {
+    background-color: #d9534f;
+    border-color:#d9534f;
+    &:before {
+      border-color: #dadada;
+    }
+    &:hover, &:focus, &:active{
+      color: #d9534f;
+      background-color: #fff;
+      border-color:transparent;
+      &:before {
+        border-color: #d9534f;
+      }
+    }
+    &.ct-btn--border{
+      background: transparent;
+      color: #d9534f;
+      border-width: 1px;
+      &:before{
+        display: none;
+      }
+      &:hover, &:focus, &:active {
+        background-color: #d9534f;
+        color:#fff ;
+      }
+    }
+    &.dropdown-toggle {
+      &:hover, &:focus, &:active {
+        background-color: #fff;
+        .caret {
+          color: #d9534f;
+        }
+      }
+      + .dropdown-menu {
+        li{
+          a {
+            &:hover, &:active, &:focus {
+              color: #d9534f;
+              border-left-color: #d9534f;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.btn--iconRight {
+    position: relative;
+    padding-right: 70px;
+    i {
+      color: #dadada;
+    }
+      &:hover, &:active {
+          i {
+            color:inherit;
+          }
+        }
+      i {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        margin-right: 20px;
+        margin-top: -8px;
+      }
+      &:after {
+        content: "";
+        position: absolute;
+        border-left: 1px solid #dadada;
+        top:2px;
+        right: 0;
+        margin-right: 50px;
+        bottom: 2px;
+      }
+  }
+// --------------------------btn with icons ------------------------------------//
+  &.btn-success {
+    &.btn--iconRight {
+      &:hover, &:focus, &:active {
+        &:after {
+          border-color: #5cb85c;
+        }
+      }
+    }
+  }
+
+  &.btn-warning {
+    &.btn--iconRight {
+      &:hover, &:focus, &:active {
+        &:after {
+          border-color: #f0ad4e;
+        }
+      }
+    }
+  }
+  &.btn-danger {
+    &.btn--iconRight {
+      &:hover, &:focus, &:active {
+        &:after {
+          border-color: #d9534f;
+        }
+      }
+    }
+  }
+  &.btn-info {
+    &.btn--iconRight {
+      &:hover, &:focus, &:active {
+        &:after {
+          border-color: #5bc0de;
+        }
+      }
+    }
+  }
+}
+
+// -------------------------------------Transparent buttons with icons------------------------------------------//
+
+&.btn-success {
+  &.ct-btn--border {
+    &.btn--iconRight {
+      &:after {
+        border-color:#5cb85c ;
+      }
+    }
+  }
+}
+
+&.btn-info {
+  &.ct-btn--border {
+    &.btn--iconRight {
+      &:after {
+        border-color:#5bc0de ;
+      }
+    }
+  }
+}
+
+&.btn-danger {
+  &.ct-btn--border {
+    &.btn--iconRight {
+      &:after {
+        border-color:#d9534f ;
+      }
+    }
+  }
+}
+
+&.btn-warning {
+  &.ct-btn--border {
+    &.btn--iconRight {
+      &:after {
+        border-color:#f0ad4e ;
+      }
+    }
+  }
+}
+
+// Button Sizes //
+
+.btn-xs {
+  padding: 7px 14px;
+}
+.btn-sm {
+  padding: 10px 17px;
+}
+.btn-lg {
+padding: 15px 25px;
+}
+
+// Button carret //----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+.btn .caret {
+  color: #d6d6d6;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.btn-group > .btn:hover, .btn-group-vertical > .btn:hover, .btn-group > .btn:focus, .btn-group-vertical > .btn:focus, .btn-group > .btn:active, .btn-group-vertical > .btn:active, .btn-group > .btn.active, .btn-group-vertical > .btn.active {
+  z-index: 0;
+}

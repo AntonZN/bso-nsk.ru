@@ -1,0 +1,96 @@
+//Social icons//
+ul.ct-socials {
+  &.ct-socials--largeIcon {
+    li {
+      a {
+        width: 55px;
+        height: 55px;
+        line-height: 54px;
+      }
+    }
+  }
+  margin-bottom: 0;
+  padding-top: 25px;
+  li {
+    a {
+      display: block;
+      width: 43px;
+      height: 43px;
+      color: @grey-color;
+      background-color: transparent;
+      border: 2px solid @grey-color;
+      text-align: center;
+      .ct-m-rounded(50%);
+      line-height: 41px;
+      i {
+        color: @grey-color;
+      }
+      &:hover, &:active, &:focus {
+        border-color: #fff;
+        i {
+          color: #fff;
+        }
+      }
+    }
+    &.active {
+      a {
+        color: #fff;
+        border-color: #fff;
+        i {
+          color: #fff;
+        }
+      }
+    }
+    &.ct-divider {
+      padding-left: 20px;
+      position: relative;
+      &:before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 5px;
+        width: 1px;
+        background-color: @grey-color;
+        height: 47px;
+        margin-top: -23px;
+      }
+    }
+  }
+  &.ct-socials--noBorder {
+    padding-top: 0;
+    margin: 0;
+    line-height: 53px;
+    li {
+      padding-left: 15px;
+      a {
+        width: auto;
+        height: auto;
+        border: none;
+          i {
+           color: #d9d9d9;
+          }
+        &:hover, &:focus, &:active {
+          i {
+            color: black;
+          }
+        }
+      }
+      &.active {
+        a {
+          i {
+            color:black;
+          }
+        }
+      }
+    }
+    &.ct-socials--darkColor {
+        li {
+          a {
+            i {
+              color:#5a5a5a;
+            }
+          }
+        }
+    }
+  }
+}

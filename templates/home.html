@@ -1,0 +1,152 @@
+<!-- templates/home.html -->
+{% extends 'base.html' %}
+
+{% load static %}
+{% block title %}Главная{% endblock %}
+
+{% block content %}
+
+    <section class="container-fluid ct-u-backgroundDark section" id="obituaries">
+        <div class="container">
+            <div class="row text-center ct-u-paddingTop70 ct-u-paddingBottom30">
+                <div class="col-md-12">
+                    <h3 class="text-uppercase ct-fw-700 ct-u-colorWhite">Каталог</h3>
+                    <span class="ct-iconDivider ct-iconDivider--dark ct-iconDivider--withOpacity"><i
+                            class="fa fa-leaf fa-2x"></i></span>
+                </div>
+            </div>
+
+            <div class="row ct-u-paddingBottom100">
+                <div class="col-md-12">
+                    <div class="ct-gallery ct-gallery--col2 ct-gallery--withSpacing  ct-gallery--opacityBorder">
+                        <div class="ct-gallery-item ct-gallery-item--masonry hidden">
+                            <div class="ct-gallery-itemInner ct-gallery-itemInner--ribbon ct-frame">
+                                <h3 class="ct-u-fontType2 ct-fs-i">Гробы</h3>
+                                <div class="ct-gallery-itemInner-image ct-gallery--hover">
+                                    <a href="/catalog/groby">
+                                        <img src="{% static 'assets/images/content/coffins.webp' %}"/>
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="ct-gallery-item ct-gallery-item--masonry hidden">
+                            <div class="ct-gallery-itemInner ct-gallery-itemInner--ribbon ct-frame">
+                                <h3 class="ct-u-fontType2 ct-fs-i">Кресты</h3>
+                                <div class="ct-gallery-itemInner-image ct-gallery--hover">
+                                    <a href="/catalog/kresty">
+                                        <img src="{% static 'assets/images/content/krestimain.jpg' %}"/>
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section
+            class="ct-mediaSection ct-hideBackground ct-u-colorWhite ct-u-paddingBottom140 ct-u-paddingTop90 ct-u-backgroundBlack"
+            data-color="#fff" data-height="450"
+            data-background="{% static 'assets/images/content/map-background1.png' %}"
+            data-background-mobile="{% static 'assets/images/content/map-background1.png' %}">
+        <div class="ct-mediaSection-inner">
+
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-md-12">
+                        <h3 class="text-uppercase ct-fw-700 ct-u-colorWhite">Свяжитесь с нами</h3>
+                        <span class="ct-iconDivider ct-iconDivider--dark ct-iconDivider--withOpacity"><i
+                                class="fa fa-leaf fa-2x"></i></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-lg-offset-2 col-md-6 col-sm-6">
+                        <div class="ct-contactBox  ct-u-paddingTop50">
+                            <ul class="ct-contactBox-list ct-contactBox-list--smallPadding list-unstyled list-inline">
+                                <li data-toggle="tooltip" data-placement="bottom" title="Позвонить" class="active"><a
+                                        href="tel:+79069097775"><i class="fa fa-phone fa-2x"></i></a></li>
+                            </ul>
+                            <span class="ct-contactBox-content ct-u-displayBlock ct-u-fontType2 ct-u-fontSize30 ct-u-colorMotive ">
++7 906 909 77 75</span>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                        <div class="ct-contactBox ct-u-paddingTop50">
+                            <ul class="ct-contactBox-list ct-contactBox-list--smallPadding list-unstyled list-inline">
+                                <li data-toggle="tooltip" data-placement="bottom" title="Отправить письмо"
+                                    class="active">
+                                    <a href="mail:bso.nsk@mail.ru"><i class="fa fa-envelope-o fa-2x"></i></a></li>
+                            </ul>
+                            <span class="ct-contactBox-content ct-u-displayBlock ct-u-fontType2 ct-u-fontSize30 ct-u-colorMotive">bso.nsk@mail.ru</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2 col-md-8 col-sm-12">
+                        <div class="ct-contactBox ct-u-paddingTop40">
+                            <ul class="ct-contactBox-list ct-contactBox-list--smallPadding list-unstyled list-inline">
+                                <li data-toggle="tooltip" data-placement="bottom" title="" class="active">
+                                    <a href="#"><i class="fa fa-home fa-2x"></i></a></li>
+                            </ul>
+                            <span class="ct-contactBox-content ct-u-displayBlock ct-u-fontType2 ct-u-fontSize30 ct-u-colorLight">Россия, г. Новосибирск, ул. Никитина, 112А
+</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!--<div class="row">
+                    <div class="col-md-12 text-center ct-u-paddingTop110">
+                        <h4 class="ct-u-colorWhite ct-u-paddingBottom60">Ответим на ваши вопросы</h4>
+
+                        <form role="form" action="assets/form/send.php" method="post" class="contactForm validateIt"
+                              data-email-subject="Contact Form" data-show-errors="true">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control ct-fs-i" id="name" name="field[]"
+                                               placeholder="Ваше имя" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control ct-fs-i" id="phone" name="field[]"
+                                               placeholder="Номер телефона" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <input type="email" class="form-control ct-fs-i" id="email" name="field[]"
+                                               placeholder="Email">
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <textarea class="form-control ct-fs-i" rows="1" name="field[]"
+                                                  placeholder="Чем мы можем помочь?" id="message"
+                                                  required></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12 text-center">
+                                    <button type="submit" class="btn btn-default">Отправить</button>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="successMessage alert alert-success ct-frame ct-u-marginTop30" style="display: none">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                            Ваше сообщение успешно доставлено
+                        </div>
+                        <div class="errorMessage alert alert-danger ct-frame ct-u-marginTop30" style="display: none">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                            Произошла ошибка, повторите попытку позже
+                        </div>
+                    </div>
+                </div>-->
+            </div>
+        </div>
+    </section>
+{% endblock %}

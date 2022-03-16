@@ -1,0 +1,139 @@
+//Topbar//
+.ct-topBar {
+  position: relative;
+  background-color: #1a1a1a;
+  padding-top:25px;
+  padding-bottom: 80px;
+  z-index:999998;
+
+  .ct-topBar-col1 {
+    width: 48%;
+  }
+  .ct-topBar-col2, .ct-topBar-col3 {
+    width: 26%;
+  }
+&.ct-topBar--small {
+  max-height: 120px;
+}
+}
+
+//Topbar version 1 //-------------------------
+
+@media (max-width: @screen-md) {
+  .ct-topBar {
+    .ct-contactBox {
+      .ct-contactBox-list {
+        padding-right: 10px;
+         li {
+           a {
+             width: 43px;
+             height: 43px;
+             line-height: 41px;
+             i {
+               font-size: 22px;
+             }
+           }
+         }
+      }
+      .ct-contactBox-content {
+        font-size: 21px!important;
+      }
+      .ct-contactBox-info {
+        font-size: 13px;
+      }
+    }
+  }
+}
+
+@media (max-width: @screen-sm-max) {
+  .ct-topBar {
+    .ct-socials {
+      li {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+  }
+}
+
+@media (max-width: @screen-xs-max) {
+  .ct-topBar {
+   .ct-contactBox, .ct-socials {
+     text-align: center;
+   }
+    .ct-contactBox {
+      .ct-contactBox-list {
+          float: none;
+      }
+    }
+  }
+}
+
+//Topbar version 2 //-------------------------
+
+@media (max-width: @screen-md-max) {
+  .ct-topBar {
+    &.ct-topBar--small {
+      .ct-topBar-col1 {
+        width: 36%;
+      }
+      .ct-topBar-col2, .ct-topBar-col3 {
+        width: 32%;
+      }
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .ct-topBar {
+    &.ct-topBar--small {
+      .ct-topBar-col1 {
+        width: 30%;
+        padding-left: 10px;
+      }
+      .ct-topBar-col2, .ct-topBar-col3 {
+        width: 35%;
+      }
+      .ct-contactBox {
+        .ct-contactBox-list {
+          padding-right: 10px;
+            li {
+              a {
+                width: 45px;
+                height: 45px;
+                line-height: 45px;
+                i {
+                  font-size: 22px;
+                }
+              }
+            }
+        }
+        .ct-contactBox-content {
+          font-size: 21px!important;
+        }
+        .ct-contactBox-info {
+          font-size: 13px;
+        }
+      }
+    }
+  }
+}
+
+
+@media (max-width: @screen-xs-max) {
+  .ct-topBar {
+    &.ct-topBar--small {
+        .ct-topBar-col1 {
+          width: 90%;
+        }
+      .ct-topBar-col2, .ct-topBar-col3 {
+        width: 5%;
+        .ct-contactBox {
+          > span {
+            display: none;
+          }
+        }
+      }
+    }
+    }
+}

@@ -1,0 +1,109 @@
+{% load static %}
+{% load mptt_tags %}
+
+<div class="ct-menuMobile">
+    <ul class="ct-menuMobile-navbar list-unstyled">
+        <li class="{% if url_name == 'home' %}active{% endif %}"><a href="/"><span class="ct-dot"></span>Главная<span></span></a>
+        </li>
+        {% recursetree categories %}
+            <li class="{% if not node.is_leaf_node %}dropdown{% else %}{% endif %} {% if url_name in 'category_detail,product_detail' %}active{% endif %}">
+                {% if not node.is_leaf_node %}
+                    <a href="{{ node.get_absolute_url }}">
+                        <span class="ct-dot"></span>
+                        {{ node.name }}
+                        <span class="caret"></span>
+                    </a>
+                {% else %}
+                    <a href="{{ node.get_absolute_url }}">
+                        <span class="ct-dot"></span>
+                        {{ node.name }}
+                    </a>
+                {% endif %}
+
+                {% if not node.is_leaf_node %}
+                    <ul class="dropdown-menu">
+                        {{ children }}
+                    </ul>
+                {% endif %}
+            </li>
+        {% endrecursetree %}
+        <li><a href="{% url 'contacts' %}"><span class="ct-dot"></span>Наши контакты</a></li>
+    </ul>
+</div>
+
+<div id="ct-js-wrapper" class="ct-pageWrapper">
+    <div class="ct-navbarMobile ct-navbarMobile--inverse">
+        <a class="navbar-brand" href="/"><img src="{% static 'assets/images/logo.jpg' %}" alt="БСО НСК"> </a>
+        <button type="button" class="navbar-toggle">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+    </div>
+    <div class="ct-topBar">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-5 col-sm-4 text-left">
+                    <div class="ct-contactBox">
+                        <ul class="ct-contactBox-list list-unstyled list-inline">
+                            <li data-toggle="tooltip" data-placement="bottom" title="Позвонить" class="active"><a
+                                    href="tel:{{ settings.phone }}"><i class="fa fa-phone fa-2x"></i></a></li>
+                        </ul>
+                        <span class="ct-contactBox-content ct-u-colorMotive ct-u-displayBlock ct-u-fontType2">{{ settings.phone }}</span>
+                        <span class="ct-contactBox-info ct-fw-800 ct-fs-i ct-u-colorWhite ct-u-displayBlock ">Номер для связи</span>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-3 col-sm-4 text-center">
+                    <a href="/"><img src="{% static 'assets/images/logo.jpg' %}" alt="БСО НСК"/></a>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 text-right">
+                    <div class="ct-contactBox emailBox">
+                        <div><span class="ct-contactBox-content ct-u-colorMotive ct-u-displayBlock ct-u-fontType2">{{ settings.email }}</span>
+                            <span class="ct-contactBox-info ct-fw-800 ct-fs-i ct-u-colorWhite ct-u-displayBlock ">Читаем письма</span>
+                        </div>
+                        <ul class="ct-contactBox-list list-unstyled list-inline">
+                            <li data-toggle="tooltip" data-placement="bottom" title="Отправить письмо" class="active"><a
+                                    href="mail:{{ settings.email }}"><i class="fa fa-envelope-o fa-2x"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-default ct-defaultMenu" data-startnavbar="145">
+        <div class="container">
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav ct-navbar--zoomIn" data-time="">
+                    <li class="{% if url_name == 'home' %}active{% endif %}"><a href="/"><span class="ct-dot"></span>Главная<span></span></a>
+                    </li>
+                    {% recursetree categories %}
+                        <li class="{% if not node.is_leaf_node %}dropdown{% else %}{% endif %} {% if url_name == node.slug %}active{% endif %}">
+                            {% if not node.is_leaf_node %}
+                                <a href="{{ node.get_absolute_url }}">
+                                    <span class="ct-dot"></span>
+                                    {{ node.name }}
+                                    <span class="caret"></span>
+                                </a>
+                            {% else %}
+                                <a href="{{ node.get_absolute_url }}">
+                                    <span class="ct-dot"></span>
+                                    {{ node.name }}
+                                </a>
+                            {% endif %}
+
+                            {% if not node.is_leaf_node %}
+                                <ul class="dropdown-menu">
+                                    {{ children }}
+                                </ul>
+                            {% endif %}
+                        </li>
+                    {% endrecursetree %}
+                    <li><a href="{% url 'contacts' %}"><span class="ct-dot"></span>Наши контакты</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>

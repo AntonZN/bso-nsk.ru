@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load view_breadcrumbs %}
+{% load cropping %}
+
+<title>{% block title %}{% if category.parent %}
+    {{ category.parent }} {{ category }}
+{% else %}
+    {{ category }}
+{% endif %}{% endblock %}
+</title>
+
+{% block meta_description %}
+    <meta name="description" content="{{ category.description }}">
+{% endblock %}
+
+{% block content %}
+    <header class="ct-mediaSection ct-mediaSectionHeader ct-u-colorWhite" data-color="#fff" data-height="300px"
+            data-background="{{ header_image.url }}"
+            data-background-mobile="{{ header_image.url }}">
+        <div class="ct-mediaSection-inner">
+            <div class="container">
+                <div class="row text-center ct-u-paddingTop40">
+                    <div class="col-md-12">
+                        <h3 class="ct-fw-700 text-uppercase">
+                            {% if category.parent %}
+                                {{ category.parent }} {{ category }}
+                            {% else %}
+                                {{ category }}
+                            {% endif %}
+                        </h3>
+                        {% render_breadcrumbs "breadcrumb.html" %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="ct-u-paddingBoth100">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12">
+                    <div class="ct-showProducts">
+                        <div class="ct-productList">
+                            {% for product in products %}
+                                <div class="col-md-4 ct-productShop">
+                                    <a href="{{ product.get_absolute_url }}">
+                                        <div class="ct-productShop-image ct-frame">
+                                            <img src="{% cropped_thumbnail product "image_cropping" max_size="600x600" %}">
+                                        </div>
+                                        <div class="ct-productShop-name ct-u-fontType2 text-center">{{ product.name }}</div>
+                                        <div class="ct-productShop-art ct-u-fontType2 ct-fs-i text-center">
+                                            Артикул: {{ product.code }}</div>
+                                        <div class="ct-productShop-price ct-u-fontType2 ct-fs-i text-center ct-u-colorMotive">{{ product.price }}
+                                            ₽
+                                        </div>
+                                    </a>
+                                </div>
+                            {% endfor %}
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="{% static 'assets/js/masonry.pkgd.min.js' %}"></script>
+    <script src="{% static 'assets/js/imagesloaded.pkgd.min.js' %}"></script>
+    <script>
+        var grid = document.querySelector('.ct-productList');
+        var msnry;
+        imagesLoaded(grid, function () {
+            msnry = new Masonry(grid, {
+                itemSelector: '.ct-productShop',
+                columnWidth: '.ct-productShop',
+
+            });
+        });
+    </script>
+{% endblock %}

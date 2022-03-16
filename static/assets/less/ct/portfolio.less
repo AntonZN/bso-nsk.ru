@@ -1,0 +1,191 @@
+.ct-gallery-filters{
+  margin-top: -15px;
+  li{
+    margin-left: 15px;
+    padding-left: 0;
+    padding-right: 0;
+    a {
+      position: relative;
+      cursor: pointer;
+      &.active {
+        color: #fff;
+        background-color: #a49769;
+        &:before {
+          content: "";
+          position: absolute;
+          top: 0px;
+          bottom: 0px;
+          left: 0px;
+          right: 0px;
+        }
+        &:hover, &:focus, &:active {
+          color: #fff;
+        }
+      }
+      &:hover, &:focus, &:active {
+        color: #fff!important;
+         background-color: #a49769!important;
+        &:before {
+          content: "";
+          position: absolute;
+          top: 0px;
+          bottom: 0px;
+          left: 0px;
+          right: 0px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: @screen-xs-max) {
+  .ct-gallery-filters {
+    li {
+     padding-bottom: 20px;
+    }
+  }
+}
+.ct-gallery-filters li > a.active {
+
+}
+.ct-gallery{
+  .wp-pagenavi{
+    display: none;
+  }
+}
+
+.ct-gallery{
+  position: relative;
+  overflow: hidden;
+  min-height: 300px;
+  &.is-loaded:before{
+    display: none;
+  }
+}
+
+.ct-gallery-item.ct-gallery-item--masonry{
+  position: relative;
+  width: 20%;
+  float: left;
+  margin-top: -1px;
+  overflow: hidden;
+
+  .project-thumb{
+    width: 100%;
+  }
+  img{
+    width: 100%;
+  }
+
+  &:hover .area-hover{
+    .ct-m-opacity(1);
+
+    .cat-links{
+      top: 0;
+      .ct-m-opacity(1);
+    }
+    .entry-title{
+      top: 0;
+      .ct-m-opacity(1);
+    }
+  }
+}
+
+.ct-gallery.ct-gallery--col5 .ct-gallery-item.ct-gallery-item--masonry{
+  width: 20%;
+  &.ct-gallery-item--wide, &.ct-gallery-item--big{
+    width: 40%;
+  }
+}
+.ct-gallery.ct-gallery--col4 .ct-gallery-item.ct-gallery-item--masonry{
+  width: 25%;
+  &.ct-gallery-item--wide, &.ct-gallery-item--big{
+    width: 50%;
+  }
+}
+.ct-gallery.ct-gallery--col3 .ct-gallery-item.ct-gallery-item--masonry{
+  width: 33.33%;
+  &.ct-gallery-item--wide, &.ct-gallery-item--big{
+    width: 66.66%;
+  }
+}
+.ct-gallery.ct-gallery--col2 .ct-gallery-item.ct-gallery-item--masonry{
+  width: 50%;
+  &.ct-gallery-item--wide, &.ct-gallery-item--big{
+    width: 100%;
+  }
+}
+.ct-gallery.ct-gallery--col1 .ct-gallery-item.ct-gallery-item--masonry{
+  width: 100%;
+}
+
+
+@media(max-width: @screen-md-max){
+  .ct-gallery.ct-gallery--col5 .ct-gallery-item.ct-gallery-item--masonry, .ct-gallery.ct-gallery--col4 .ct-gallery-item.ct-gallery-item--masonry{
+    width: 25%;
+    &.ct-gallery-item--wide, &.ct-gallery-item--big{
+      width: 75%;
+    }
+  }
+}
+
+@media(max-width: @screen-sm-max){
+  .ct-gallery.ct-gallery--col5 .ct-gallery-item.ct-gallery-item--masonry, .ct-gallery.ct-gallery--col4 .ct-gallery-item.ct-gallery-item--masonry{
+    width: 33.33%;
+    &.ct-gallery-item--wide, &.ct-gallery-item--big{
+      width: 66.66%;
+    }
+  }
+}
+@media(max-width: @screen-xs-max){
+  .ct-gallery.ct-gallery--col5 .ct-gallery-item.ct-gallery-item--masonry, .ct-gallery.ct-gallery--col4 .ct-gallery-item.ct-gallery-item--masonry, .ct-gallery.ct-gallery--col3 .ct-gallery-item.ct-gallery-item--masonry, .ct-gallery.ct-gallery--col2 .ct-gallery-item.ct-gallery-item--masonry{
+    width: 100%;
+    &.ct-gallery-item--wide, &.ct-gallery-item--big{
+      width: 100%;
+    }
+  }
+}
+
+#infscr-loading {
+  z-index: 99999999999999;
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+  margin-left: -100px;
+  text-align: center;
+  > div{
+    width: 200px;
+    padding: 20px 0;
+    background-color: #222222;
+  }
+}
+#infscr-loading img {
+  display: none !important;
+}
+
+#infscr-loading div{
+  position: relative;
+  bottom: auto;
+  left: auto;
+}
+
+#infscr-loading > div{
+  position: absolute;
+  bottom: -38px;
+  left: 8px;
+}
+
+.gallerymessage{
+  padding: 7px 15px;
+  color: #ffffff;
+}
+
+@-webkit-keyframes moveUp {
+  0% { }
+  100% { -webkit-transform: translateY(0); opacity: 1; }
+}
+
+@keyframes moveUp {
+  0% { }
+  100% { -webkit-transform: translateY(0); transform: translateY(0); opacity: 1; }
+}

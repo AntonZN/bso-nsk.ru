@@ -1,0 +1,22 @@
+{% load mptt_tags %}
+
+
+<footer class="ct-footer">
+    <div class="ct-footerUp">
+        <ul class="list-inline list-unstyled text-center">
+            <li>
+                <a href="/">Главная</a>
+            </li>
+            {% recursetree categories %}
+                <li>
+                    <a href="{{ node.get_absolute_url }}">
+                        {{ node.name }}
+                    </a>
+                </li>
+            {% endrecursetree %}
+            <li>
+                <a href="{% url 'contacts' %}">Контакты</a>
+            </li>
+        </ul>
+    </div>
+</footer>

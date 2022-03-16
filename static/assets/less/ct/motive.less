@@ -1,0 +1,664 @@
+@motive: #c0b17b;
+
+// -------------------- BTN default-------------------- //
+.btn {
+  &.btn-default {
+    &:hover, &:focus, &:active {
+      color: @motive;
+      &:before {
+        border-color: @motive;
+      }
+    }
+    &.ct-btn--border {
+      color: @motive;
+      border: 2px solid @motive !important;
+      &:hover, &:focus, &:active {
+        background-color: @motive;
+      }
+    }
+    &.dropdown-toggle {
+      &:hover, &:focus, &:active {
+        .caret {
+          color: @motive;
+        }
+      }
+    }
+  }
+
+  // -------------------- BTN primary-------------------- //
+
+  &.btn-primary{
+    background-color: @motive;
+    border-color:@motive;
+    &:hover, &:focus, &:active {
+      color: @motive;
+      &:before {
+        border-color: @motive;
+      }
+    }
+    &.ct-btn--border{
+      color: @motive;
+      &:hover, &:focus, &:active {
+        background-color: @motive;
+      }
+    }
+    &.dropdown-toggle {
+      &:hover, &:focus, &:active {
+        .caret {
+          color: @motive;
+        }
+      }
+      + .dropdown-menu {
+        li{
+          a {
+            &:hover, &:active, &:focus {
+              color: @motive;
+              border-left-color: @motive;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // -------------------- BTN with icons-------------------- //
+
+  &.btn-primary {
+    &.btn--iconRight {
+      &:hover, &:focus, &:active {
+        &:after {
+          border-color: @motive;
+        }
+      }
+    }
+  }
+  &.btn-default {
+    &.btn--iconRight {
+      &:hover, &:focus, &:active {
+        &:after {
+          border-color: @motive;
+        }
+      }
+    }
+  }
+}
+// -------------------------------------Transparent buttons with icons------------------------------------------//
+
+&.btn-default {
+  &.ct-btn--border {
+    &.btn--iconRight {
+      &:after {
+        border-color:@motive ;
+      }
+    }
+  }
+}
+
+&.btn-primary {
+  &.ct-btn--border {
+    &.btn--iconRight {
+      &:after {
+        border-color:@motive ;
+      }
+    }
+  }
+}
+
+
+.ct-u-colorMotive {
+  color: @motive;
+}
+
+// ----------------------------Footer ----------------------------//
+footer.ct-footer {
+  .ct-copyright {
+    > span {
+      > a {
+        color: @motive;
+      }
+    }
+  }
+  .ct-footerBottom {
+    .ct-company {
+      i {
+        color: @motive;
+      }
+    }
+  }
+}
+
+// ----------------Portfolio ----------------------------//
+
+.ct-gallery-filters {
+  li {
+    a{
+      &.active {
+        &:before {
+          border:4px solid @motive;
+        }
+      }
+      &:hover, &:focus, &:active {
+        &:before {
+          border:4px solid @motive;
+        }
+      }
+    }
+  }
+}
+
+// --------------------------Accordions ----------------------------//
+
+.panel-group {
+  &.ct-panelFirstVariations {
+    .panel {
+      &.panel-default {
+        .panel-heading {
+          .panel-title {
+            a {
+              &:hover, &:active, &:focus {
+                > span {
+                  background-color: @motive;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  &.ct-panelSecondVariations {
+    .panel {
+      &.panel-default {
+        .panel-heading {
+          .panel-title{
+            a {
+              &:hover, &:active, &:focus {
+                i {
+                  color: @motive;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//----------------------------Menu-------------------------------//
+
+nav {
+  &.navbar {
+    &.navbar-default {
+      ul.nav {
+        &.navbar-nav {
+          >  li {
+            &.active{
+              >  a {
+                color: @motive;
+                border-bottom: 2px solid @motive;
+              }
+              .dropdown-menu {
+                li {
+                  &.active {
+                    a {
+                      &:hover, &:focus, &:active {
+                        color: @motive;
+                      }
+                    }
+                  }
+                  &.dropdown {
+                    &.active {
+                      a {
+                        &:hover, &:active, &:focus  {
+                          color:@motive;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            >  a {
+              &:before {
+                background-color: @motive;
+              }
+
+              &:hover, &:active {
+                color: @motive;
+              }
+              span.ct-dot {
+                &:before {
+                  background-color: @motive;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+nav {
+  .dropdown-menu {
+    li {
+      &.active {
+        > a {
+          color: @motive;
+          &:before {
+            background-color: @motive;
+          }
+        }
+      }
+    }
+    a, > li > a {
+      &:hover, &:active {
+        color: @motive;
+        &:before {
+          background-color: @motive;
+        }
+      }
+    }
+  }
+}
+
+.ct-menuMobile {
+  .ct-menuMobile-navbar {
+    li {
+      a {
+        color: @motive;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+.ct-menuMobile {
+  .ct-menuMobile-navbar {
+    .dropdown {
+      &.open {
+        .dropdown-menu {
+          li {
+            &:hover, &:focus, &:active {
+              background-color: @motive;
+              a {
+                color: black;
+              }
+            }
+            a {
+              &:hover, &:focus, &:active {
+                color: #000000;
+                background-color: transparent;
+              }
+            }
+          }
+          li {
+            &.dropdown-submenu {
+              background-color: transparent;
+              a {
+                color: @motive;
+                background-color: transparent;
+              }
+              .dropdown-menu {
+                background-color: transparent;
+                li {
+                  color: @motive;
+                  background-color: transparent;
+                  a {
+                    background-color: transparent;
+                    &:hover, &:focus, &:active {
+                      color: black;
+                    }
+                  }
+                  &:hover, &:focus, &:active {
+                    color: black;
+                    background-color: @motive;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+.ct-menuMobile {
+  .ct-menuMobile-navbar {
+    .dropdown {
+      > .dropdown-menu {
+        .dropdown-submenu {
+          > .dropdown-menu {
+            li {
+              a {
+                color:@motive;
+              }
+            }
+          }
+          &.open {
+            .dropdown-menu {
+              li {
+                &:hover, &:focus, &:active {
+                  a {
+                    background-color: @motive;
+                    color: black;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+.is-active {
+  a {
+    color:@motive!important;
+    border-bottom-color:@motive!important;
+  }
+}
+
+
+.ct-iconBoxes {
+  &:hover, &:focus {
+    .ct-iconBoxes-title, .ct-iconBoxes-icon span i {
+      color: @motive;
+    }
+  }
+}
+.btn-group {
+  .dropdown-menu {
+    li {
+      a {
+        &:focus, &:hover {
+          color: @motive;
+          border-left: 2px solid @motive;
+        }
+      }
+    }
+  }
+}
+
+.ct-iconBoxes {
+  &.ct-iconBoxes--secondVersion {
+    .ct-iconBoxes-icon {
+      &.active {
+        background-color: @motive;
+      }
+      &:hover, &:focus, &active {
+        background-color: @motive;
+        &:before {
+          border-color:@motive;
+        }
+
+      }
+    }
+    .ct-iconBoxes-title {
+      a {
+        &:hover, &:focus, &:active {
+          color: @motive;
+        }
+      }
+    }
+  }
+}
+
+.btn-group {
+  &.open {
+    .btn {
+      &.btn-default {
+        color: @motive;
+      }
+    }
+  }
+}
+
+.ct-gallery {
+  .ct-gallery-itemInner {
+    .ct-gallery-itemInner-content {
+      ul {
+        li {
+          &:first-child, &:last-child {
+            a {
+              &:hover, &:active, &:focus
+              {
+                color: @motive;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.breadcrumb {
+  > li {
+    a {
+      &:hover, &:focus, &:active {
+        color: @motive;
+      }
+    }
+    + li {
+      &:before {
+        color: @motive;
+      }
+    }
+  }
+}
+
+.ct-article {
+  .ct-article-title {
+    a {
+      &:hover, &:focus, &:active {
+        color: @motive;
+      }
+    }
+  }
+  .ct-article-meta {
+    li {
+      &:after {
+        color: @motive;
+      }
+      a {
+        &:hover, &:focus, &:active {
+          color: @motive;
+        }
+      }
+      &.ct-article-comments {
+        &:hover, &:focus, &:active {
+          color: @motive;
+        }
+      }
+    }
+  }
+}
+
+.pagination {
+  li {
+    &.active {
+      a {
+        color: @motive;
+        &:hover, &:active, &:focus {
+          color: @motive;
+        }
+      }
+    }
+  }
+}
+
+.ct-sidebar {
+  .widget {
+    .widget-inner {
+      .media {
+        .media-body {
+          .media-heading {
+            a {
+              &:hover, &:focus, &:active {
+                color: @motive;
+              }
+            }
+          }
+        }
+      }
+      .ct-widget-lists {
+        a {
+          &:hover, &:active, &:focus {
+            color: @motive;
+          }
+          i {
+            color: @motive;
+          }
+        }
+      }
+      .ct-tags {
+        li {
+          a {
+            &:hover, &:focus, &:active {
+              background-color: @motive;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.ct-panel{
+  .media {
+    .media-body {
+      .ct-comments {
+        .ct-author, .ct-date, .ct-replyButton {
+          a {
+            &:hover, &:focus, &:active {
+              color: @motive;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+nav.ct-navComponent {
+  ul {
+    li {
+      a {
+        &:hover, &:focus, &:active {
+          color: @motive;
+          &:before {
+            background-color: @motive;
+          }
+        }
+      }
+    }
+  }
+}
+
+.ct-progressBar{
+  .progress{
+    .progress-bar{
+      background-color: @motive;
+    }
+  }
+}
+
+table.table {
+  thead {
+    background-color: @motive;
+  }
+}
+
+.ct-tabs {
+  .nav-tabs {
+    &:after {
+      background-color: @motive;
+    }
+    > li {
+     > a {
+        border-bottom: 1px solid @motive;
+      }
+      &.active {
+        > a {
+          border: 1px solid @motive;
+          background-color: @motive;
+        }
+      }
+    }
+  }
+}
+
+.modal {
+  .modal-dialog {
+    .modal-content {
+      .modal-body {
+        ul {
+          li {
+            a {
+              &:hover, &:focus, &:active {
+                color:@motive;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.ct-tweet {
+  .owl-wrapper-outer {
+    .owl-wrapper {
+      .owl-item {
+        div {
+          p {
+            .tweet_text {
+              a {
+                color: @motive;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Mail link //--------------------------------------------
+
+a[href^="mailto"] {
+  &:hover, &:focus, &:active {
+    color: @motive;
+  }
+}
+.ct-footer {
+  .ct-footerBottom {
+    .ct-company {
+      a {
+        &:hover, &:focus, &:active {
+          color: @motive;
+        }
+      }
+    }
+  }
+}
+
