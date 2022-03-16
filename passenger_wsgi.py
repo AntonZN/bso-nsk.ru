@@ -11,7 +11,7 @@ import os
 import sys
 
 sys.path.insert(0, '/var/www/u1625612/data/www/bso-nsk.ru/bso_nsk')
-sys.path.insert(1, '/var/www/u1625612/data/bso/lib/python3.7/site-packages')
+sys.path.insert(1, '/var/www/u1625612/data/bso/lib/python3.8/site-packages')
 
 from django.core.wsgi import get_wsgi_application
 
