@@ -7,8 +7,8 @@
 {% block title %}Главная{% endblock %}
 {% block content %}
     <header class="ct-mediaSection ct-mediaSectionHeader ct-u-colorWhite" data-color="#fff" data-height="300px"
-            data-background="{% static 'assets/images/content/header-flowers.jpg' %}"
-            data-background-mobile="{% static 'assets/images/content/header-flowers.jpg' %}">
+            data-background="{{ header_image.url }}"
+            data-background-mobile="{{ header_image.url }}">
         <div class="ct-mediaSection-inner">
             <div class="container">
                 <div class="row text-center ct-u-paddingTop40">
@@ -47,8 +47,7 @@
                                             <div class="ct-productShop-name ct-u-fontSize24 ct-fw-700 text-uppercase ct-u-mobileTextCenter">
                                                 {{ product.name }}
                                             </div>
-                                            <h4 class="ct-productShop-price ct-u-fontType2 ct-fs-i ct-u-colorMotive">{{ product.price }}
-                                                ₽</h4>
+                                            <h4 class="ct-productShop-price ct-u-fontType2 ct-fs-i ct-u-colorMotive">Цена по запросу</h4>
                                             <p class="ct-productShop-description">{{ product.description }}</p>
                                             <div class="ct-u-borderBottom ct-u-paddingBottom10"></div>
                                         </div>
