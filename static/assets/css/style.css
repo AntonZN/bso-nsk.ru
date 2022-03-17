@@ -1037,7 +1037,7 @@ nav .dropdown-menu > li > a:before {
 }
 .ct-navbarMobile .navbar-brand img {
   max-width: 80%;
-  margin-top: -20px;
+  margin-top: -10px;
 }
 .ct-navbarMobile .navbar-toggle {
   position: absolute;
