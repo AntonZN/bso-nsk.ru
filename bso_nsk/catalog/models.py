@@ -2,6 +2,7 @@ from django.db import models
 from mptt.models import MPTTModel, TreeForeignKey
 from image_cropping import ImageRatioField, ImageCropField
 from django.urls import reverse
+from autoslug import AutoSlugField
 
 
 class CatalogSettings(models.Model):
@@ -32,7 +33,7 @@ class Category(MPTTModel):
         null=True,
         blank=True,
     )
-    slug = models.SlugField("Название для ulr")
+    slug = AutoSlugField("Название для ulr", populate_from='name')
     image = models.ImageField("Изображение", blank=True, null=True)
 
     def __str__(self):
@@ -67,7 +68,7 @@ class Product(models.Model):
     image_cropping = ImageRatioField(
         "image", "1000x1000", verbose_name="Изображение кроп", free_crop=True
     )
-    slug = models.SlugField("Название для ulr")
+    slug = AutoSlugField("Название для ulr", populate_from='name')
 
     def __str__(self):
         return f"{self.name}, арт: {self.code}"

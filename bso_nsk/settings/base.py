@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'view_breadcrumbs',
     'image_cropping',
     'bso_nsk.catalog',
+    'django_extensions',
 ]
 
 MIDDLEWARE = [

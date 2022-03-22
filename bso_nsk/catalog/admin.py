@@ -26,7 +26,6 @@ class CategoryAdmin(DraggableMPTTAdmin):
         "indented_title",
     ]
     list_display_links = ["indented_title"]
-    prepopulated_fields = {"slug": ("name",), }
 
 
 @admin.register(Product)
@@ -41,4 +40,4 @@ class ProductAdmin(ImageCroppingMixin, admin.ModelAdmin):
     )
     search_fields = ("code", "name",)
     list_filter = ("category",)
-    prepopulated_fields = {"slug": ("name",), }
+
