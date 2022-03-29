@@ -63,6 +63,7 @@ class Product(models.Model):
         on_delete=models.CASCADE,
         related_name="products",
     )
+    sort = models.IntegerField("Порядок сортировки", default=0)
     visible = models.BooleanField("Отображать в каталоге", default=True)
     image = ImageCropField(blank=True, upload_to="products", verbose_name="Изображение")
     image_cropping = ImageRatioField(

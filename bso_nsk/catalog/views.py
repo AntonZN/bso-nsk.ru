@@ -23,8 +23,14 @@ class CategoryView(BaseBreadcrumbMixin, DetailView):
             del category_sub_kwargs["sub_slug"]
 
             return [
-                (self.object.parent, reverse("catalog:category_detail", kwargs=category_sub_kwargs)),
-                (self.object.name, reverse("catalog:category_detail", kwargs=self.kwargs)),
+                (
+                    self.object.parent,
+                    reverse("catalog:category_detail", kwargs=category_sub_kwargs),
+                ),
+                (
+                    self.object.name,
+                    reverse("catalog:category_detail", kwargs=self.kwargs),
+                ),
             ]
         return [
             (self.object.name, reverse("catalog:category_detail", kwargs=self.kwargs)),
@@ -33,7 +39,13 @@ class CategoryView(BaseBreadcrumbMixin, DetailView):
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
         context.update(get_main_context(self.request))
-        context["products"] = Product.objects.filter(category__in=self.object.get_descendants(include_self=True))
+        context["products"] = (
+            Product.objects.filter(
+                category__in=self.object.get_descendants(include_self=True)
+            )
+            .filter(visible=True)
+            .ordered_by("sort")
+        )
         context["header_image"] = self.object.get_root().image
         return context
 
@@ -63,12 +75,24 @@ class ProductView(BaseBreadcrumbMixin, DetailView):
 
         if self.object.category.parent:
             return [
-                (self.object.category.parent, reverse("catalog:category_detail", kwargs=category_sub_kwargs)),
-                (self.object.category.name, reverse("catalog:category_detail", kwargs=category_kwargs)),
-                (self.object.name, reverse("catalog:product_detail", kwargs=self.kwargs)),
+                (
+                    self.object.category.parent,
+                    reverse("catalog:category_detail", kwargs=category_sub_kwargs),
+                ),
+                (
+                    self.object.category.name,
+                    reverse("catalog:category_detail", kwargs=category_kwargs),
+                ),
+                (
+                    self.object.name,
+                    reverse("catalog:product_detail", kwargs=self.kwargs),
+                ),
             ]
         return [
-            (self.object.category, reverse("catalog:category_detail", kwargs=category_kwargs)),
+            (
+                self.object.category,
+                reverse("catalog:category_detail", kwargs=category_kwargs),
+            ),
             (self.object.name, reverse("catalog:product_detail", kwargs=self.kwargs)),
         ]
 
