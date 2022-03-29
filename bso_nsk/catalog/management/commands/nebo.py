@@ -56,7 +56,7 @@ def get_nb():
             )
             p.image.save(filename, ContentFile(image_content))
             sort += 1
-            print("next")
+            print(f"next {sort}")
 
 
 class Command(BaseCommand):
