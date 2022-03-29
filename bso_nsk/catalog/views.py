@@ -44,7 +44,7 @@ class CategoryView(BaseBreadcrumbMixin, DetailView):
                 category__in=self.object.get_descendants(include_self=True)
             )
             .filter(visible=True)
-            .ordered_by("sort")
+            .order_by("sort")
         )
         context["header_image"] = self.object.get_root().image
         return context
