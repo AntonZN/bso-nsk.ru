@@ -10,6 +10,7 @@ def get_nb():
     content = r.get("https://nebo18.ru/")
 
     soup = BeautifulSoup(content.content, "html.parser")
+    sort = 31
     for sect in [
         "elementor-element-7532b48",
         "elementor-element-0cadaa7",
@@ -19,7 +20,6 @@ def get_nb():
     ]:
         section = soup.find("section", class_=sect)
         container = section.find("div", class_="elementor-container")
-        sort = 31
         for item in container.find_all("div", class_="elementor-column"):
             data = item.find("div", class_="elementor-widget-container")
             image = None
