@@ -48,7 +48,7 @@
                                                 {{ product.name }}
                                             </div>
                                             <h4 class="ct-productShop-price ct-u-fontType2 ct-fs-i ct-u-colorMotive">Цена по запросу</h4>
-                                            {% if product.description  %}<p class="ct-productShop-description">{{ product.description }}</p>{% endif %}
+                                            {% if product.description  %}<p class="ct-productShop-description">{{ product.description|safe }}</p>{% endif %}
                                             <div class="ct-u-borderBottom ct-u-paddingBottom10"></div>
                                         </div>
                                     </div>
